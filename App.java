@@ -2,144 +2,91 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class App {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        String opcao;
 
-        int opcao;
+        do {
+            System.out.println();
+            System.out.println("Deseja jogar Pedra, Papel e Tesoura? (s/n) ");
+            opcao = sc.next();
 
-
-        String pedra =  " _____ " + "\n" +
-                        "---' ____) " + "\n" +
-                        " (_____) " + "\n" +
-                        " (_____) " + "\n" +
-                        " (____) " + "\n" +
-                        " (___) ";
-
-        String pedraX = " \\ ____/__ " + "\n" +
-                        "---\\ /___) " + "\n" +
-                        " \\ /_____) " + "\n" +
-                        " X(_____) " + "\n" +
-                        " / \\____) " + "\n" +
-                        "---/__(\\___) " + "\n" +
-                        " / \\ ";
-
-        String papel =  " _______ " + "\n" +
-                        "---' ____)____ " + "\n" +
-                        " ______) " + "\n" +
-                        " _______) " + "\n" +
-                        " _______) " + "\n" +
-                        "---.__________) ";
-
-        String papelX = " \\_____/_ " + "\n" +
-                        "---'\\ /___)____ " + "\n" +
-                        " \\ / ______) " + "\n" +
-                        " X _______) " + "\n" +
-                        " / \\ _______) " + "\n" +
-                        "---./___\\_____) " + "\n" +
-                        " / \\ ";
-
-        String tesoura = " _______ " + "\n" +
-                         "---' ____)____ " + "\n" +
-                         " ______) " + "\n" +
-                         " __________)" + "\n" +
-                         " (____) " + "\n" +
-                         "---.__(___) ";
-
-        String tesouraX = " \\_____/_ " + "\n" +
-                          "---'\\ _/__)____ " + "\n" +
-                          " \\ / ______) " + "\n" +
-                          " X__________)" + "\n" +
-                          " /(\\___) " + "\n" +
-                          "---./_(_\\_) " + "\n" +
-                          " / \\ ";
-
-        System.out.println("Vamos jogar pedra, papel e tesoura?");
-        String resposta = sc.next();
-        boolean isVerdadeiro = "sim".equalsIgnoreCase(resposta);
-        Random gerador = new Random();
-        // Gera um número entre 1 e 3
-        int escolhaComputador = gerador.nextInt(3) + 1;
-        System.out.println(escolhaComputador);
-
-        if (isVerdadeiro == true) {
-
-            System.out.println("LETS PLAY A GAME");
-
-            do {
-                System.out.println("--- MENU DE OPÇOES ---");
-                System.out.println("1 - Pedra");
-                System.out.println("2 - Papel");
-                System.out.println("3 - Tesoura");
-                System.out.println("0 - Sair");
+            if (opcao.equalsIgnoreCase("s")) {
+                System.out.printf("\n======MENU======");
+                System.out.printf("\n1 - Pedra");
+                System.out.printf("\n2 - Papel");
+                System.out.printf("\n3 - Tesoura");
+                System.out.printf("\n0 - Voltar ao menu");
+                System.out.printf("\nEscolha: ");
 
                 while (!sc.hasNextInt()) {
-                    System.out.println("Por favor, digite um número válido");
+                    System.out.println("Por favor, digite uma escolha válida");
                     sc.next();
                 }
-                opcao = sc.nextInt();
-            }   while(opcao !=0);
+                int escolhaUsuario = sc.nextInt();
 
-            switch (opcao) {
-                case 1:
-                    //pedra
-                    if (escolhaComputador == 1){
-                        System.out.println("Empate");
-                    }
-                    if (escolhaComputador == 2){
-                        System.out.println("Perdeu");
-                    }
-                    if (escolhaComputador == 3){
-                        System.out.println("Ganhou");
-                    }
-                    break;
-                case 2:
-                    //papel
-                    if (escolhaComputador == 1){
-                        System.out.println("Ganhou");
-                    }
-                    if (escolhaComputador == 2){
-                        System.out.println("Empate");
-                    }
-                    if (escolhaComputador == 3){
-                        System.out.println("Perdeu");
-                    }
-                    break;
-                case 3:
-                    //tesoura
-                    if (escolhaComputador == 1){
-                        System.out.println("Perdeu");
-                    }
-                    if (escolhaComputador == 2){
-                        System.out.println("Ganhou");
-                    }
-                    if (escolhaComputador == 3){
-                        System.out.println("Empate");
-                    }
-                    break;
-                case 0:
-                    System.out.println("Fechando o programa..."); 
-                    break;
-            
-                default:
-                    System.out.println("Opção inválida! Escolha 1, 2, 3 ou 0");
-                    return;
+                if (escolhaUsuario == 0) {
+                    continue; // volta ao menu principal
+                }
+
+                Random gerador = new Random();
+                int escolhaComputador = gerador.nextInt(3) + 1;
+
+                switch (escolhaUsuario) {
+                    case 1: // Pedra
+                        if (escolhaComputador == 1){ 
+                            System.out.println("Empate");
+                            System.out.println("Computador escolheu: Pedra");
+                        }
+                        else if (escolhaComputador == 2){ 
+                            System.out.println("Você perdeu");
+                            System.out.println("Computador escolheu: Papel");
+                        }
+                        else{ 
+                            System.out.println("Você venceu");
+                            System.out.println("Computador escolheu: Tesoura");
+                        }
+                            break;
+                    case 2: // Papel
+                        if (escolhaComputador == 1){ 
+                            System.out.println("Você venceu");
+                            System.out.println("Computador escolheu: Pedra");
+                        }
+                        else if (escolhaComputador == 2){ 
+                            System.out.println("Empate");
+                            System.out.println("Computador escolheu: Papel");
+                        }
+                        else{ 
+                            System.out.println("Você perdeu");
+                            System.out.println("Computador escolheu: Tesoura");
+                        }
+                            break;
+                    case 3: // Tesoura
+                        if (escolhaComputador == 1){ 
+                            System.out.println("Você perdeu");
+                            System.out.println("Computador escolheu: Pedra");
+                        }
+                        else if (escolhaComputador == 2){ 
+                            System.out.println("Você venceu");
+                            System.out.println("Computador escolheu: Papel");
+                        }
+                        else{ 
+                            System.out.println("Empate");
+                            System.out.println("Computador escolheu: Tesoura");
+                        }
+                            break;
+                    default:
+                        System.out.println("Opção inválida! Escolha 1, 2, 3 ou 0");
+                }
+            } else if (opcao.equalsIgnoreCase("n")) {
+                System.out.println("Ok, programa encerrado");
+                break;
+            } else {
+                System.out.println("Por favor, digite s para sim ou n para não");
             }
 
-            
+        } while (true);
 
-
-
-
-
-
-
-
-
-            
-        } else {
-            System.out.println("po que vacilo");
-            System.exit(0);
-        }
-
+        sc.close();
     }
 }
