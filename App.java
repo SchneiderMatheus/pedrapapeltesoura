@@ -37,42 +37,51 @@ public class App {
                         if (escolhaComputador == 1){ 
                             System.out.println("Empate");
                             System.out.println("Computador escolheu: Pedra");
+                            System.out.println("O v.s O");
                         }
                         else if (escolhaComputador == 2){ 
                             System.out.println("Você perdeu");
                             System.out.println("Computador escolheu: Papel");
+                            System.out.println("O v.s ██");
                         }
                         else{ 
                             System.out.println("Você venceu");
                             System.out.println("Computador escolheu: Tesoura");
+                            System.out.println("O v.s X");
                         }
                             break;
                     case 2: // Papel
                         if (escolhaComputador == 1){ 
                             System.out.println("Você venceu");
                             System.out.println("Computador escolheu: Pedra");
+                            System.out.println("██ v.s O");
                         }
                         else if (escolhaComputador == 2){ 
                             System.out.println("Empate");
                             System.out.println("Computador escolheu: Papel");
+                            System.out.println("██ v.s ██");
                         }
                         else{ 
                             System.out.println("Você perdeu");
                             System.out.println("Computador escolheu: Tesoura");
+                            System.out.println("██ v.s X");
                         }
                             break;
                     case 3: // Tesoura
                         if (escolhaComputador == 1){ 
                             System.out.println("Você perdeu");
                             System.out.println("Computador escolheu: Pedra");
+                            System.out.println("X v.s O");
                         }
                         else if (escolhaComputador == 2){ 
                             System.out.println("Você venceu");
                             System.out.println("Computador escolheu: Papel");
+                            System.out.println("O v.s ██");
                         }
                         else{ 
                             System.out.println("Empate");
                             System.out.println("Computador escolheu: Tesoura");
+                            System.out.println("X v.s X");
                         }
                             break;
                     default:
