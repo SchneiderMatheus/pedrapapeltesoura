@@ -69,6 +69,11 @@ public class App {
                 System.out.println("3 - Tesoura");
                 System.out.println("0 - Sair");
 
+                Random gerador = new Random();
+                // Gera um número entre 1 e 3
+                int escolhaComputador = gerador.nextInt(3) + 1;
+                System.out.println(escolhaComputador);
+
                 while (!sc.hasNextInt()) {
                     System.out.println("Por favor, digite um número válido");
                     return;
