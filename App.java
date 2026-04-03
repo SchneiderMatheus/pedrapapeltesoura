@@ -83,14 +83,38 @@ public class App {
                 case 1:
                     //pedra
                     if (escolhaComputador == 1){
-                        
+                        System.out.println("Empate");
+                    }
+                    if (escolhaComputador == 2){
+                        System.out.println("Perdeu");
+                    }
+                    if (escolhaComputador == 3){
+                        System.out.println("Ganhou");
                     }
                     break;
                 case 2:
                     //papel
+                    if (escolhaComputador == 1){
+                        System.out.println("Ganhou");
+                    }
+                    if (escolhaComputador == 2){
+                        System.out.println("Empate");
+                    }
+                    if (escolhaComputador == 3){
+                        System.out.println("Perdeu");
+                    }
                     break;
                 case 3:
                     //tesoura
+                    if (escolhaComputador == 1){
+                        System.out.println("Perdeu");
+                    }
+                    if (escolhaComputador == 2){
+                        System.out.println("Ganhou");
+                    }
+                    if (escolhaComputador == 3){
+                        System.out.println("Empate");
+                    }
                     break;
                 case 0:
                     System.out.println("Fechando o programa..."); 
